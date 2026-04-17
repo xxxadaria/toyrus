@@ -1,5 +1,6 @@
 // айдишки игрущек
 let cart = [];
+let selectedPaymentMethod = 'Карты';
 let products = [
     { id: 1, name: 'Technic Monster Truck', price: 2499, img: 'https://ir.ozone.ru/s3/multimedia-1/6554350357.jpg', cat: 'Конструкторы' },
     { id: 2, name: 'Barbie Dreamhouse', price: 8999, img: 'https://ir.ozone.ru/s3/multimedia-1-9/c1000/7144018353.jpg', cat: 'Куклы' },
@@ -157,7 +158,8 @@ window.checkout = function() {
     btn.disabled = true;
     
     setTimeout(() => {
-        alert(` ВАШ ЗАКАЗ ОПЛАЧЕН УСПЕШНО!\n\n💰 Сумма: ${total.toLocaleString()} ₽\n📦 
+        alert(` ВАШ ЗАКАЗ ОПЛАЧЕН УСПЕШНО!\n\n💰 Сумма: ${total.toLocaleString()} ₽\n💳 
+        Оплата: ${selectedPaymentMethod}\n📦 
         Адрес: ${user.address}\n👤 Покупатель: ${user.name}\n📧 ${user.email}\n\nСпасибо 
         за покупку! 🎉\n\nТовары скоро будут отправлены`);
         
@@ -175,6 +177,30 @@ window.checkout = function() {
         }, 3000);
     }, 2000);
 };
+
+function initPaymentMethods() {
+    const paymentButtons = document.querySelectorAll('.payment-method-btn');
+    if (!paymentButtons.length) return;
+
+    const paymentStatus = document.getElementById('paymentStatus');
+
+    paymentButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            paymentButtons.forEach(item => {
+                item.classList.remove('selected');
+                item.setAttribute('aria-pressed', 'false');
+            });
+
+            button.classList.add('selected');
+            button.setAttribute('aria-pressed', 'true');
+
+            selectedPaymentMethod = button.dataset.payment || 'Карты';
+            if (paymentStatus) {
+                paymentStatus.textContent = `ok: выбран способ "${selectedPaymentMethod}"`;
+            }
+        });
+    });
+}
 
 // настройки
 function initSettings() {
@@ -263,6 +289,7 @@ function initCurrentPage() {
     // Корзина
     if (document.getElementById('cartItems')) {
         updateCartUI();
+        initPaymentMethods();
     }
     
     // Настройки

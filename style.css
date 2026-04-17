@@ -399,9 +399,49 @@ input:focus, textarea:focus {
     margin: 2rem 0; flex-wrap: wrap;
 }
 
-.payment-methods span {
-    padding: 0.8rem 1.5rem; background: rgba(255,255,255,0.7);
-    border-radius: 25px; font-weight: 600; color: var(--dark);
+.payment-method-btn {
+    padding: 0.8rem 1.5rem;
+    background: rgba(255,255,255,0.78);
+    border: 2px solid transparent;
+    border-radius: 25px;
+    font-weight: 700;
+    color: var(--dark);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    transition: all 0.25s ease;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.payment-method-btn:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255,255,255,0.7);
+}
+
+.payment-method-btn.selected {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(46,204,113,0.25);
+}
+
+.payment-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--green);
+    background: transparent;
+    transition: background 0.25s ease;
+}
+
+.payment-method-btn.selected .payment-dot {
+    background: var(--green);
+}
+
+.payment-status {
+    margin: 0 0 1.3rem;
+    font-weight: 600;
+    color: #ffffff;
 }
 
 .btn-large { 

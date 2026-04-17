@@ -53,11 +53,24 @@
             <div class="payment-section">
                 <h4>💳 Доступные способы оплаты</h4>
                 <div class="payment-methods">
-                    <span>💳 Карты</span>
-                    <span>💰 СБП</span>
-                    <span>💸 Яндекс.Деньги</span>
-                    <span>💵 Наличные</span>
+                    <button type="button" class="payment-method-btn selected" data-payment="Карты" aria-pressed="true">
+                        <span class="payment-dot"></span>
+                        💳 Карты
+                    </button>
+                    <button type="button" class="payment-method-btn" data-payment="СБП" aria-pressed="false">
+                        <span class="payment-dot"></span>
+                        💰 СБП
+                    </button>
+                    <button type="button" class="payment-method-btn" data-payment="Яндекс.Деньги" aria-pressed="false">
+                        <span class="payment-dot"></span>
+                        💸 Яндекс.Деньги
+                    </button>
+                    <button type="button" class="payment-method-btn" data-payment="Наличные" aria-pressed="false">
+                        <span class="payment-dot"></span>
+                        💵 Наличные
+                    </button>
                 </div>
+                <p id="paymentStatus" class="payment-status">ok: выбран способ "Карты"</p>
                 <button class="btn btn-success btn-large" onclick="checkout()">
                     ✅ Оформить и оплатить заказ
                 </button>
