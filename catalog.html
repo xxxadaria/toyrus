@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог - Toys R Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Toys R Us</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Главная</a></li>
+                <li><a href="catalog.html" class="nav-link active">Каталог</a></li>
+                <li><a href="cart.html" class="nav-link">🛒 Корзина (<span id="cartCount">0</span>)</a></li>
+                <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+                <li><a href="settings.html" class="nav-link">Настройки</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main">
+        <section class="page-header">
+            <h1>🛒 Каталог игрушек</h1>
+        </section>
+
+        <div class="catalog-controls">
+            <div class="filter-group">
+                <select id="categoryFilter">
+                    <option value="">Все категории</option>
+                    <option value="Конструкторы">Конструкторы</option>
+                    <option value="Куклы">Куклы</option>
+                    <option value="Машинки">Машинки</option>
+                    <option value="Настольные">Настольные</option>
+                </select>
+                <input type="text" id="searchInput" placeholder="🔍 Поиск по названию...">
+            </div>
+        </div>
+
+        <div class="products-grid" id="productsGrid"></div>
+        
+        <div class="load-more" id="loadMore" style="display: none;">
+            <button class="btn btn-primary" onclick="loadMoreProducts()">📦 Показать ещё</button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; Toys R Us<br> Подарки, которые ты давно искал<br> 
+        Телефон: +7(800) 999-99-99<br>(Пн-Пт с 09:00-18:00) archive@toysrus.com</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

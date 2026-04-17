@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toys R Us - Легенда Игрушек</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Toys R Us</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Главная</a></li>
+                <li><a href="catalog.html" class="nav-link">Каталог</a></li>
+                <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+                <li><a href="settings.html" class="nav-link">Настройки</a></li>
+                <li><a href="cart.html" class="nav-link">Корзина (<span id="cartCount">0</span>)</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Toys R Us</h1>
+            <div class="hero-buttons">
+                <a href="catalog.html" class="btn btn-primary">Смотреть каталог</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="featured">
+            <h2>Популярные товары</h2>
+            <div class="grid">
+                <div class="card" data-page="catalog">
+                    <h3>Лего Сити</h3>
+                    <p>Классические конструкторы</p>
+                </div>
+                <div class="card" data-page="catalog">
+                    <h3>Barbie</h3>
+                    <p>Коллекционные куклы</p>
+                </div>
+                <div class="card" data-page="catalog">
+                    <h3>Hot Wheels</h3>
+                    <p>Скоростные машинки</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; Toys R Us<br> Подарки, которые ты давно искал<br> 
+        Телефон: +7(800) 999-99-99<br>(Пн-Пт с 09:00-18:00) archive@toysrus.com</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

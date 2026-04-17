@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина - Toys R Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🛒 Toys R Us</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Главная</a></li>
+                <li><a href="catalog.html" class="nav-link">Каталог</a></li>
+                <li><a href="cart.html" class="nav-link active">🛒 Корзина (<span id="cartCount">0</span>)</a></li>
+                <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+                <li><a href="settings.html" class="nav-link">Настройки</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main">
+        <!-- Мини-заголовок -->
+        <section class="page-header">
+            <h1>🛒 Ваша корзина</h1>
+            <p id="cartSubtitle">Архивные игрушки для коллекции</p>
+        </section>
+
+        <!-- Пустая корзина -->
+        <div id="emptyCart" class="empty-cart">
+            <div class="empty-cart-content">
+                <div class="empty-icon">🛒</div>
+                <h2>Корзина пуста</h2>
+                <p>Добавьте игрушки из каталога для оформления заказа</p>
+                <a href="catalog.html" class="btn btn-primary">🛍️ Перейти в каталог</a>
+            </div>
+        </div>
+
+        <!-- Товары корзины -->
+        <div id="cartItems" class="cart-items" style="display: none;"></div>
+
+        <!-- Итог и оплата -->
+        <div id="cartTotal" class="cart-total" style="display: none;">
+            <div class="total-header">
+                <h2>Итого к оплате</h2>
+                <div class="total-price">
+                    <span class="price-big" id="totalPrice">0</span> <span class="currency">₽</span>
+                </div>
+            </div>
+            
+            <div class="payment-section">
+                <h4>💳 Доступные способы оплаты</h4>
+                <div class="payment-methods">
+                    <span>💳 Карты</span>
+                    <span>💰 СБП</span>
+                    <span>💸 Яндекс.Деньги</span>
+                    <span>💵 Наличные</span>
+                </div>
+                <button class="btn btn-success btn-large" onclick="checkout()">
+                    ✅ Оформить и оплатить заказ
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; Toys R Us<br> Подарки, которые ты давно искал<br> 
+        Телефон: +7(800) 999-99-99<br>(Пн-Пт с 09:00-18:00) h\archive@toysrus.com</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Toys R Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🛒 Toys R Us</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Главная</a></li>
+                <li><a href="catalog.html" class="nav-link">Каталог</a></li>
+                <li><a href="contacts.html" class="nav-link active">Контакты</a></li>
+                <li><a href="settings.html" class="nav-link">Настройки</a></li>
+                <li><a href="cart.html" class="nav-link">Корзина (<span id="cartCount">0</span>)</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main">
+        <section class="page-header">
+            <h1>Связаться с Toys R Us</h1>
+        </section>
+
+        <section class="contacts-grid">
+            <div class="contact-card info-card">
+                <div class="icon">📞</div>
+                <h3>Телефон</h3>
+                <p>+7(800) 999-99-99<br></p>
+            </div>
+            
+            <div class="contact-card info-card">
+                <div class="icon">✉️</div>
+                <h3>Email</h3>
+                <p>archive@toysrus.com<br></p>
+            </div>
+            
+            <div class="contact-card info-card">
+                <div class="icon">📍</div>
+                <h3>Адрес</h3>
+                <p>Rockville, MD, USA</p>
+            </div>
+        </section>
+
+        <section class="contact-form-section">
+            <h2>Написать нам</h2>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Ваше имя" required>
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <textarea placeholder="Сообщение о любимых воспоминаниях Toys R Us..." rows="6" 
+                required></textarea>
+                <button type="submit" class="btn btn-primary 
+                full-width">Отправить сообщение</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; Toys R Us<br> Подарки, которые ты давно искал<br> 
+        Телефон: +7(800) 999-99-99<br>(Пн-Пт с 09:00-18:00) archive@toysrus.com</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Обработка формы
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('✅ Спасибо за ваше сообщение! Мы сохраним ваши воспоминания о Toys R Us ❤️');
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>
