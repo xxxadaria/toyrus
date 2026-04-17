@@ -202,6 +202,29 @@ function initPaymentMethods() {
     });
 }
 
+function getSavedUser() {
+    return JSON.parse(localStorage.getItem('toysrus_user') || '{}');
+}
+
+function isCheckoutProfileFilled(user = getSavedUser()) {
+    return Boolean(user.name && user.name.trim() && user.address && user.address.trim());
+}
+
+function updateCheckoutAvailability() {
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    const checkoutHint = document.getElementById('checkoutHint');
+    if (!checkoutBtn || !checkoutHint) return;
+
+    const ready = isCheckoutProfileFilled();
+    checkoutBtn.disabled = !ready;
+    checkoutBtn.style.opacity = ready ? '1' : '0.65';
+    checkoutBtn.style.cursor = ready ? 'pointer' : 'not-allowed';
+
+    checkoutHint.textContent = ready
+        ? 'ok: профиль заполнен, можно оформить заказ'
+        : 'Заполните имя и адрес в Настройках, чтобы оформить заказ';
+}
+
 // настройки
 function initSettings() {
     const saved = JSON.parse(localStorage.getItem('toysrus_user') || '{}');
@@ -230,6 +253,7 @@ window.saveSettings = function() {
     
     localStorage.setItem('toysrus_user', JSON.stringify(user));
     alert('✅ Профиль сохранён! Теперь можно оформлять заказы 🛒');
+    updateCheckoutAvailability();
 };
 
 window.resetSettings = function() {
@@ -290,6 +314,7 @@ function initCurrentPage() {
     if (document.getElementById('cartItems')) {
         updateCartUI();
         initPaymentMethods();
+        updateCheckoutAvailability();
     }
     
     // Настройки

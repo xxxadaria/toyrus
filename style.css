@@ -352,19 +352,39 @@ input:focus, textarea:focus {
 }
 
 .quantity-controls { 
-    display: flex; align-items: center; gap: 1.5rem; margin: 1.5rem 0;
-    padding: 1.5rem; background: rgba(46,204,113,0.1); 
-    border-radius: 20px; border: 2px solid var(--green);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.3rem;
+    margin: 1.5rem 0;
+    padding: 1rem 1.3rem;
+    background: rgba(46,204,113,0.1);
+    border-radius: 20px;
+    border: 2px solid var(--green);
 }
 
 .qty-btn { 
-    width: 55px; height: 55px; padding: 0 !important; 
-    font-size: 1.8rem; font-weight: 800; border-radius: 15px;
+    width: 58px;
+    height: 58px;
+    min-width: 58px;
+    padding: 0 !important;
+    border-radius: 16px;
+    font-size: 2rem !important;
+    font-weight: 800;
+    line-height: 1;
+    text-transform: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .qty { 
-    font-size: 2.2rem; font-weight: 900; color: var(--green); 
-    min-width: 50px; text-align: center;
+    font-size: 2.1rem;
+    font-weight: 900;
+    color: var(--green);
+    min-width: 42px;
+    text-align: center;
+    line-height: 1;
 }
 
 .cart-actions button {
